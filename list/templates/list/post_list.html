@@ -5,6 +5,8 @@
     <div class="row">
       <div class="col-lg-12 col-md-10 mx-auto">
         <div class="post">
+          <h1>Recipes ({{ posts.count }})</h1>
+          <hr>
           {% for post in posts %}
               <img src="{{ post.image.url }}" class="post-image"/>
               <hr>
@@ -14,7 +16,8 @@
               <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
               <h4>{{ post.preview_text }}</h4>
               <div class="info">
-                Published by {{ post.author }} on {{ post.published_date }}
+                Posted by <strong>{{ post.author }}</strong> on {{ post.published_date }} <br><br>
+                <a href="{% url 'post_detail' pk=post.pk %}"><span class="glyphicon glyphicon-envelope"></span> Comments: {{ post.comments.count }}</a>
               </div>
               <hr>
           {% endfor %}

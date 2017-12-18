@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import PostForm
+from .forms import PostForm, CommentForm, ContactForm
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
@@ -66,4 +66,27 @@ def post_delete(request, pk):
     return HttpResponse('deleted')
 
 def contact(request):
-    return render(request, 'list/contact.html')
+    if request.method == "POST":
+        return redirect('message_recieved')
+    else:
+        form_class = ContactForm
+
+    return render(request, 'list/contact.html', {
+        'form': form_class,
+    })
+
+def message_recieved(request):
+    return render(request, 'list/message-recieved.html')
+
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'list/add_comment_to_post.html', {'form': form})

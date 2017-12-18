@@ -1,8 +1,23 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('image', 'prepare_time', 'portions', 'title', 'preview_text', 'ingredients', 'preperation')
+        fields = ('image', 'title', 'prepare_time', 'portions', 'preview_text', 'ingredients', 'preperation')
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author', 'text',)
+
+class ContactForm(forms.Form):
+
+    contact_name = forms.CharField(required=True)
+    contact_email = forms.EmailField(required=True)
+    content = forms.CharField(
+        required=True,
+        widget=forms.Textarea
+    )

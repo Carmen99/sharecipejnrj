@@ -12,7 +12,7 @@
               <p>{{ post.preview_text }}<p>
               <div class="info">
                 {% if user.is_authenticated %}
-                Published by {{ post.author }} on {{ post.published_date }} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                Posted by <strong>{{ post.author }}</strong> on {{ post.published_date }} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
                 {% endif %}
                 {% if user.is_superuser %}
                 <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
@@ -28,9 +28,24 @@
               <h1>Instructions</h1>
               <hr>
               <p>{{ post.preperation|linebreaksbr }}</p>
+              <h1>Comments</h1>
+              <hr>
+              <a class="btn btn-default btn-md" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+              <hr>
+              {% for comment in post.comments.all %}
+                  <div class="comment">
+                      <p>{{ comment.text|linebreaks }}</p>
+                      <div class="info">Posted by <strong>{{ comment.author }}</strong> on {{ comment.created_date }}</div>
+                      <hr>
+                  </div>
+              {% empty %}
+                  <p>No comments here yet :(</p>
+              {% endfor %}
             </div>
           </div>
         </div>
       </div>
     </div>
+    <hr>
+
 {% endblock %}
