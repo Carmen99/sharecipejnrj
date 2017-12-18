@@ -1,0 +1,25 @@
+{% extends 'list/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-10 mx-auto">
+        <div class="post">
+          {% for post in posts %}
+              <img src="{{ post.image.url }}" class="post-image"/>
+              <hr>
+              <i class="fa fa-clock-o" style="font-size:20px">&nbsp;{{ post.prepare_time }}&nbsp;</i>
+              <i class="fa fa-user" style="font-size:20px">&nbsp;{{ post.portions }}</i>
+              <hr>
+              <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+              <h4>{{ post.preview_text }}</h4>
+              <div class="info">
+                Published by {{ post.author }} on {{ post.published_date }}
+              </div>
+              <hr>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'list/base.html' %}
+
+{% block content %}
+
+<!-- Page Header -->
+<!--  <header class="masthead" style="background-image: url('https://epicureandculture.com/wp-content/uploads/2015/07/shutterstock_150989213.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Sharecipe</h1>
+            <span class="subheading">Share and explore delicious recipes.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>-->
+<!--
+  <div class="jumbotron" style="background-image: url('../images/header.jpg'">
+      <div class="container">
+        <div class="site-heading">
+          <h1>Sharecipe</h1>
+          <h3>Share and explore delicious recipes.</h3>
+        </div>
+      </div>
+  </div>
+-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-10 mx-auto">
+        <div class="page-header">
+          </br>
+          <h1><b>Sharecipe</b></h1>
+          <h3><b>Share and explore delicious recipes.</b></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-10 mx-auto">
+        <div class="post">
+          <p>Sharecipe is a platform for all to share your favorite recipes and to (re)view those of others.</p>
+          <p>The recipes that are posted by a diversity of people can be viewed and reviewed on the <a href="{% url 'post_list' %}">recipe page</a>. Are you interested in uploading recipes yourself, make sure you are registered and go to the <a href="{% url 'post_new' %}"> post recipe</a> page.</p>
+          <p>If you have any other questions, do not hesitate and ask them on the <a href="{% url 'contact' %}">contact page</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

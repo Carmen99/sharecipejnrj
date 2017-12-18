@@ -4,8 +4,13 @@ from django.utils import timezone
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
+    image = models.ImageField(upload_to = 'recipe_images')
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    prepare_time = models.CharField(max_length = 20, blank=True)
+    portions = models.CharField(max_length = 20, blank=True)
+    preview_text = models.CharField(max_length = 100, blank=True)
+    ingredients = models.TextField()
+    preperation = models.TextField(blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(

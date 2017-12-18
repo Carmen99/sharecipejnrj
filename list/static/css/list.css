@@ -1,0 +1,153 @@
+body {
+  background: #f8f8f8;
+}
+
+.page-header {
+  max-width: 100%;
+  height: 300px;
+  background-image: url('https://cdn.shopify.com/s/files/1/1046/3208/files/healthyfood.png?v=1494536312');
+  border-radius: 10px;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: #339933;
+  font-size: 50px;
+}
+
+.page-header h3 {
+  color: #339933;
+  font-size: 40px;
+}
+
+.post-image {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  color: white;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lora', 'Times New Roman', serif;
+}
+
+.info {
+  font-style: italic;
+  font-size: 15px;
+  color: #b20101;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.post {
+    margin-bottom: 70px;
+    font-family: 'Lora', 'Times New Roman', serif;
+    align-self: center;
+}
+
+.post h2 a {
+    color: #000000;
+}
+
+.post h2 a:hover {
+  color: #b20101 ;
+}
+
+.navbar {
+  font-family: 'Lora', 'Times New Roman', serif;
+  background-color: #E0E0E0;
+  border-color: #E0E0E0;
+}
+
+.nav.navbar-nav li a, .navbar-brand {
+   color: #b20101;
+ }
+
+.nav.navbar-nav a:hover {
+ color: white;
+}
+
+/* Code from clean-blog.ss */
+
+header.masthead {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: 0.5; }
+  header.masthead .page-heading,
+  header.masthead .post-heading,
+  header.masthead .site-heading {
+    padding: 200px 0 150px;
+    color: white; }
+    @media only screen and (min-width: 768px) {
+      header.masthead .page-heading,
+      header.masthead .post-heading,
+      header.masthead .site-heading {
+        padding: 200px 0; } }
+  header.masthead .page-heading,
+  header.masthead .site-heading {
+    text-align: center; }
+    header.masthead .page-heading h1,
+    header.masthead .site-heading h1 {
+      font-size: 50px;
+      margin-top: 0; }
+    header.masthead .page-heading .subheading,
+    header.masthead .site-heading .subheading {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.1;
+      display: block;
+      margin: 10px 0 0;
+      font-family: 'Lora', 'Times New Roman', serif; }
+    @media only screen and (min-width: 768px) {
+      header.masthead .page-heading h1,
+      header.masthead .site-heading h1 {
+        font-size: 80px; } }
+  header.masthead .post-heading h1 {
+    font-size: 35px; }
+  header.masthead .post-heading .meta,
+  header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block; }
+  header.masthead .post-heading .subheading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 30px;
+    font-family: 'Lora', 'Times New Roman', serif; }
+  header.masthead .post-heading .meta {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Lora', 'Times New Roman', serif; }
+    header.masthead .post-heading .meta a {
+      color: #fff; }
+  @media only screen and (min-width: 768px) {
+    header.masthead .post-heading h1 {
+      font-size: 55px; }
+    header.masthead .post-heading .subheading {
+      font-size: 30px; } }
+
+/* end code from clean-blog.css */

@@ -1,0 +1,36 @@
+{% extends 'list/base.html' %}
+
+
+{% block content %}
+    <div class="post">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post">
+              <img src="{{ post.image.url }}" class="post-image"/>
+              <h1>{{ post.title }}</h1>
+              <p>{{ post.preview_text }}<p>
+              <div class="info">
+                {% if user.is_authenticated %}
+                Published by {{ post.author }} on {{ post.published_date }} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                {% endif %}
+                {% if user.is_superuser %}
+                <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
+                {% endif %}
+              </div>
+              <hr>
+              <i class="fa fa-clock-o" style="font-size:20px">&nbsp;{{ post.prepare_time }}&nbsp;</i>
+              <i class="fa fa-user" style="font-size:20px">&nbsp;{{ post.portions }}</i>
+              <hr>
+              <h1>Ingredients</h1>
+              <hr>
+              <p>{{ post.ingredients|linebreaksbr }}</p>
+              <h1>Instructions</h1>
+              <hr>
+              <p>{{ post.preperation|linebreaksbr }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
